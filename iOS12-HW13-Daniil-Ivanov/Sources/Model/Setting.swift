@@ -10,6 +10,16 @@ import Foundation
 struct Setting {
     let type: SettingType
     let kind: SettingKind?
+
+    init(type: SettingType, kind: SettingKind?) {
+        self.type = type
+        self.kind = kind
+    }
+
+    init(type: SettingType) {
+        self.type = type
+        self.kind = nil
+    }
 }
 
 enum SettingType: String {
@@ -26,11 +36,9 @@ enum SettingType: String {
     case general = "Основные"
     case controlCentre = "Пункт управления"
     case displayAndBrightness = "Экран и яркость"
-    case homeScreenAndAppLibrary = "Экран \"домой\" и библиотека приложений"
     case accessibility = "Универсальный доступ"
     case wallpaper = "Обои"
     case standBy = "Ожидание"
-    case siriAndSearch = "Siri и Поиск"
 }
 
 enum SettingKind {
@@ -39,10 +47,25 @@ enum SettingKind {
     case notification(count: Int)
 }
 
-enum ConnectionInfo {
+enum ConnectionInfo: CustomStringConvertible {
     case turnOn
     case turnOff
     case notConnected
     case connected
-    case connectedWithInfo
+    case connectedEmptyInfo
+
+    var description: String {
+        switch self {
+        case .turnOn:
+            "Вкл."
+        case .turnOff:
+            "Выкл."
+        case .notConnected:
+            "Не подключен"
+        case .connected:
+            "Подключен"
+        case .connectedEmptyInfo:
+            ""
+        }
+    }
 }
