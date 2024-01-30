@@ -7,10 +7,9 @@
 
 import Foundation
 
-struct Setting<T> {
+struct Setting {
     let type: SettingType
     let kind: SettingKind?
-    let value: T?
 }
 
 enum SettingType: String {
@@ -35,12 +34,12 @@ enum SettingType: String {
 }
 
 enum SettingKind {
-    case switcher
-    case connectionInfo
-    case notification
+    case switcher(value: Bool)
+    case connectionInfo(value: ConnectionInfo)
+    case notification(count: Int)
 }
 
-enum ConnectionInfoType {
+enum ConnectionInfo {
     case turnOn
     case turnOff
     case notConnected
