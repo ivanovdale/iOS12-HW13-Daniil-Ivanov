@@ -13,6 +13,10 @@
 		0093EA582B68E26200F2C4DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0093EA572B68E26200F2C4DC /* Assets.xcassets */; };
 		0093EA5B2B68E26200F2C4DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0093EA592B68E26200F2C4DC /* LaunchScreen.storyboard */; };
 		0093EA692B68E5CB00F2C4DC /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0093EA682B68E5CB00F2C4DC /* Setting.swift */; };
+		0093EA6B2B68E91600F2C4DC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0093EA6A2B68E91600F2C4DC /* SettingsView.swift */; };
+		0093EA6E2B68E9DF00F2C4DC /* SettingsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0093EA6D2B68E9DF00F2C4DC /* SettingsTableView.swift */; };
+		0093EA712B68FDF100F2C4DC /* Setting+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0093EA702B68FDF100F2C4DC /* Setting+Extensions.swift */; };
+		0093EA742B69054000F2C4DC /* SettingsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0093EA732B69054000F2C4DC /* SettingsFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		0093EA5A2B68E26200F2C4DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0093EA5C2B68E26200F2C4DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0093EA682B68E5CB00F2C4DC /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		0093EA6A2B68E91600F2C4DC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		0093EA6D2B68E9DF00F2C4DC /* SettingsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableView.swift; sourceTree = "<group>"; };
+		0093EA702B68FDF100F2C4DC /* Setting+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Setting+Extensions.swift"; sourceTree = "<group>"; };
+		0093EA732B69054000F2C4DC /* SettingsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,8 +83,11 @@
 		0093EA632B68E3E900F2C4DC /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				0093EA722B69051900F2C4DC /* Helpers */,
+				0093EA6F2B68FDDE00F2C4DC /* Extensions */,
 				0093EA672B68E56D00F2C4DC /* Controller */,
 				0093EA662B68E56800F2C4DC /* Model */,
+				0093EA6C2B68E91C00F2C4DC /* View */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -113,6 +124,31 @@
 				0093EA522B68E26100F2C4DC /* SettingsViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		0093EA6C2B68E91C00F2C4DC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0093EA6A2B68E91600F2C4DC /* SettingsView.swift */,
+				0093EA6D2B68E9DF00F2C4DC /* SettingsTableView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0093EA6F2B68FDDE00F2C4DC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0093EA702B68FDF100F2C4DC /* Setting+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0093EA722B69051900F2C4DC /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0093EA732B69054000F2C4DC /* SettingsFactory.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,9 +221,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0093EA712B68FDF100F2C4DC /* Setting+Extensions.swift in Sources */,
+				0093EA742B69054000F2C4DC /* SettingsFactory.swift in Sources */,
+				0093EA6B2B68E91600F2C4DC /* SettingsView.swift in Sources */,
 				0093EA532B68E26100F2C4DC /* SettingsViewController.swift in Sources */,
 				0093EA4F2B68E26100F2C4DC /* AppDelegate.swift in Sources */,
 				0093EA692B68E5CB00F2C4DC /* Setting.swift in Sources */,
+				0093EA6E2B68E9DF00F2C4DC /* SettingsTableView.swift in Sources */,
 				0093EA512B68E26100F2C4DC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
