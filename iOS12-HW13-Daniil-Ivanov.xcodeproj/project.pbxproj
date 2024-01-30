@@ -17,6 +17,8 @@
 		0093EA6E2B68E9DF00F2C4DC /* SettingsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0093EA6D2B68E9DF00F2C4DC /* SettingsTableView.swift */; };
 		0093EA712B68FDF100F2C4DC /* Setting+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0093EA702B68FDF100F2C4DC /* Setting+Extensions.swift */; };
 		0093EA742B69054000F2C4DC /* SettingsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0093EA732B69054000F2C4DC /* SettingsFactory.swift */; };
+		0093EA762B690C8800F2C4DC /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0093EA752B690C8800F2C4DC /* SettingsTableViewCell.swift */; };
+		0093EA792B690DB200F2C4DC /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0093EA782B690DB200F2C4DC /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,7 @@
 		0093EA6D2B68E9DF00F2C4DC /* SettingsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableView.swift; sourceTree = "<group>"; };
 		0093EA702B68FDF100F2C4DC /* Setting+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Setting+Extensions.swift"; sourceTree = "<group>"; };
 		0093EA732B69054000F2C4DC /* SettingsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFactory.swift; sourceTree = "<group>"; };
+		0093EA752B690C8800F2C4DC /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0093EA792B690DB200F2C4DC /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +135,7 @@
 			children = (
 				0093EA6A2B68E91600F2C4DC /* SettingsView.swift */,
 				0093EA6D2B68E9DF00F2C4DC /* SettingsTableView.swift */,
+				0093EA752B690C8800F2C4DC /* SettingsTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -167,6 +172,9 @@
 			dependencies = (
 			);
 			name = "iOS12-HW13-Daniil-Ivanov";
+			packageProductDependencies = (
+				0093EA782B690DB200F2C4DC /* SnapKit */,
+			);
 			productName = "iOS12-HW13-Daniil-Ivanov";
 			productReference = 0093EA4B2B68E26100F2C4DC /* iOS12-HW13-Daniil-Ivanov.app */;
 			productType = "com.apple.product-type.application";
@@ -195,6 +203,9 @@
 				Base,
 			);
 			mainGroup = 0093EA422B68E26100F2C4DC;
+			packageReferences = (
+				0093EA772B690DB200F2C4DC /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 0093EA4C2B68E26100F2C4DC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -229,6 +240,7 @@
 				0093EA692B68E5CB00F2C4DC /* Setting.swift in Sources */,
 				0093EA6E2B68E9DF00F2C4DC /* SettingsTableView.swift in Sources */,
 				0093EA512B68E26100F2C4DC /* SceneDelegate.swift in Sources */,
+				0093EA762B690C8800F2C4DC /* SettingsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +461,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0093EA772B690DB200F2C4DC /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0093EA782B690DB200F2C4DC /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0093EA772B690DB200F2C4DC /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0093EA432B68E26100F2C4DC /* Project object */;
 }
