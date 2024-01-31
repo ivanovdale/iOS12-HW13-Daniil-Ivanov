@@ -6,6 +6,13 @@
 //
 
 import UIKit
+import SnapKit
+
+// MARK: - Constants
+
+fileprivate enum Constants {
+    static let backgroundColor = UIColor.white
+}
 
 final class SettingsView: UIView {
 
@@ -22,6 +29,7 @@ final class SettingsView: UIView {
         super.init(frame: frame)
         setupView()
         setupHierarchy()
+        setupLayout()
     }
 
     required init?(coder: NSCoder) {
@@ -31,14 +39,21 @@ final class SettingsView: UIView {
     // MARK: Setup
 
     private func setupView() {
-
+        backgroundColor = Constants.backgroundColor
     }
 
     private func setupHierarchy() {
-
+        addSubview(tableView)
     }
 
-    func setupDelegate(delegate: UITableViewDelegate) {
+    private func setupLayout() {
+        tableView.snp.makeConstraints { make in
+            make.left.top.right.bottom.equalToSuperview()
+        }
+    }
+
+    func configureTableView(delegate: UITableViewDelegate, dataSource: UITableViewDataSource) {
         tableView.delegate = delegate
+        tableView.dataSource = dataSource
     }
 }
