@@ -15,9 +15,6 @@ fileprivate enum Constants {
     static let textFont = UIFont.systemFont(ofSize: 16)
     static let textColor = UIColor.black
     static let textLeadingOffset = 15.0
-    static let imageColor = UIColor.white
-    static let imageSize = 30.0
-    static let imageCornerRadius = imageSize / 4
     static let imageLeadingOffset = 10.0
     static let imageVerticalOffset = 6.0
     static let switcherTrailingOffset = 20.0
@@ -32,31 +29,27 @@ fileprivate enum Constants {
 }
 
 enum SettingsTableViewCellConstants {
-    static let separatorInsetLeft = Constants.imageLeadingOffset + Constants.imageSize + Constants.textLeadingOffset
-    static let rowHeight = Constants.imageSize + Constants.imageVerticalOffset * 2
+    static let imageSize = 30.0
+    static let separatorInsetLeft = Constants.imageLeadingOffset + Self.imageSize + Constants.textLeadingOffset
+    static let rowHeight = Self.imageSize + Constants.imageVerticalOffset * 2
 }
 
 class SettingsTableViewCell: UITableViewCell {
     static let identifier = "SettingsTableViewCell"
     var data: Setting? {
         didSet {
-            iconView.image = data?.type.image.withTintColor(Constants.imageColor, renderingMode: .alwaysOriginal)
-            iconView.backgroundColor = data?.type.color
-            titleLabel.text = data?.type.rawValue
+            guard let data else { return }
+            iconView.data = data
+            titleLabel.text = data.type.rawValue
             configureTrailingView()
         }
     }
 
     // MARK: Outlets
 
-    private lazy var iconView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.layer.cornerRadius = Constants.imageCornerRadius
-        imageView.contentMode = .center
-        return imageView
-    }()
+    private lazy var iconView = SettingImageView(frame: .zero)
 
-    private lazy var titleLabel: UILabel = UILabel()
+    private lazy var titleLabel = UILabel()
 
     private var trailingView: UIView?
 
@@ -86,7 +79,6 @@ class SettingsTableViewCell: UITableViewCell {
 
     private func setupLayout() {
         iconView.snp.makeConstraints { make in
-            make.height.width.equalTo(Constants.imageSize)
             make.leading.equalTo(contentView).offset(Constants.imageLeadingOffset)
             make.centerY.equalTo(contentView)
         }
