@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "baseline_bluetooth_white_18pt_1x.png",
+      "filename" : "baseline_bluetooth_white_20pt_1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "baseline_bluetooth_white_18pt_2x.png",
+      "filename" : "baseline_bluetooth_white_20pt_2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "baseline_bluetooth_white_18pt_3x.png",
+      "filename" : "baseline_bluetooth_white_20pt_3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
