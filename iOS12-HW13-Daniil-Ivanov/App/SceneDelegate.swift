@@ -14,7 +14,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         let settingsFactory = SettingsFactory()
-        window?.rootViewController = SettingsViewController(settingsFactory: settingsFactory)
+        let settingsController = SettingsViewController(settingsFactory: settingsFactory)
+        let navigationController = UINavigationController(rootViewController: settingsController)
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }
 }
