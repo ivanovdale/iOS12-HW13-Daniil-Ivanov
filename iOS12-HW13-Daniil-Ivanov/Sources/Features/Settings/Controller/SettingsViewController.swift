@@ -7,6 +7,10 @@
 
 import UIKit
 
+fileprivate enum Constants {
+    static let title = "Настройки"
+}
+
 final class SettingsViewController: UIViewController {
     private let settingsFactory: SettingsFactory
     private var settings: [[Setting]]?
@@ -38,8 +42,9 @@ final class SettingsViewController: UIViewController {
 
     private func setupView() {
         let view = SettingsView()
-        view.setupDelegate(delegate: self)
+        view.configureTableView(delegate: self, dataSource: self)
         self.view = view
+        self.title = Constants.title
     }
 
     // MARK: Data
@@ -52,7 +57,13 @@ final class SettingsViewController: UIViewController {
 // MARK: - Extensions
 
 extension SettingsViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let data = settings?[indexPath.section][indexPath.row] else { return }
+        print("Нажата ячейка \(data.type.rawValue)")
+        tableView.deselectRow(at: indexPath, animated: true)
+        guard let navigationController, data.type != SettingType.airplaneMode else { return }
+        navigationController.pushViewController(SettingDetailsViewController(), animated: true)
+    }
 }
 
 extension SettingsViewController: UITableViewDataSource {
@@ -65,7 +76,13 @@ extension SettingsViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: <#T##String#>, for: <#T##IndexPath#>)
+        let cell = tableView.dequeueReusableCell(withIdentifier: SettingsTableViewCell.identifier, for: indexPath) as? SettingsTableViewCell
+        cell?.data = settings?[indexPath.section][indexPath.row]
+        return cell ?? UITableViewCell()
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        SettingsTableViewCellConstants.rowHeight
     }
 }
 

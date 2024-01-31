@@ -19,14 +19,14 @@ struct SettingsFactory {
         ]
 
         let secondaryGroup = [
-            Setting(type: .notifications, kind: .notification(count: 1)),
+            Setting(type: .notifications),
             Setting(type: .soundsAndHaptics),
             Setting(type: .focus),
             Setting(type: .screenTime),
         ]
 
         let tertiaryGroup = [
-            Setting(type: .general),
+            Setting(type: .general, kind: .notification(count: 1)),
             Setting(type: .controlCentre),
             Setting(type: .displayAndBrightness),
             Setting(type: .accessibility),

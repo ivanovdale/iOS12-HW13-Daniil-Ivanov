@@ -17,14 +17,14 @@ extension SettingType {
         case .airplaneMode:
             imageName = "airplane"
         case .wifi:
-            imageName = "wifi"
+            return UIImage(systemName: "wifi")?.resized(targetSize: CGSize(width: 20, height: 20)) ?? UIImage()
         case .bluetooth:
             let image = UIImage(named: "bluetooth")
             return image ?? UIImage()
         case .mobileService:
             imageName = "antenna.radiowaves.left.and.right"
         case .personalHotspot:
-            imageName = "personalhotspot"
+            return UIImage(systemName: "personalhotspot")?.resized(targetSize: CGSize(width: 20, height: 20)) ?? UIImage()
         case .vpn:
             imageName = "network"
         case .notifications:
