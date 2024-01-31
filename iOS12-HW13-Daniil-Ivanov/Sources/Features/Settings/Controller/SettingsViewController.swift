@@ -62,7 +62,8 @@ extension SettingsViewController: UITableViewDelegate {
         print("Нажата ячейка \(data.type.rawValue)")
         tableView.deselectRow(at: indexPath, animated: true)
         guard let navigationController, data.type != SettingType.airplaneMode else { return }
-        navigationController.pushViewController(SettingDetailsViewController(), animated: true)
+        let detailsController = SettingDetailsViewController(data: data)
+        navigationController.pushViewController(detailsController, animated: true)
     }
 }
 
