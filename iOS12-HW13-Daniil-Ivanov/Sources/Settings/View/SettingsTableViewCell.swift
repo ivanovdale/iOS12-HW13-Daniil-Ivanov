@@ -8,32 +8,6 @@
 import UIKit
 import SnapKit
 
-// MARK: - Constants
-
-fileprivate enum Constants {
-    static let backgroundColor = UIColor.white
-    static let textFont = UIFont.systemFont(ofSize: 16)
-    static let textColor = UIColor.black
-    static let textLeadingOffset = 15.0
-    static let imageLeadingOffset = 10.0
-    static let imageVerticalOffset = 6.0
-    static let switcherTrailingOffset = 20.0
-    static let trailingViewTrailingOffset = 8.0
-    static let trailingLabelTextFont = UIFont.systemFont(ofSize: 16)
-    static let trailingLabelTextColor = UIColor.systemGray
-    static let trailingNotificationsColor = UIColor.systemRed
-    static let trailingNotificationsSize = 20.0
-    static let trailingNotificationsCornerRadius = trailingNotificationsSize / 2
-    static let trailingNotificationsTextColor = UIColor.white
-    static let trailingNotificationsTextFont = UIFont.systemFont(ofSize: 12)
-}
-
-enum SettingsTableViewCellConstants {
-    static let imageSize = 30.0
-    static let separatorInsetLeft = Constants.imageLeadingOffset + Self.imageSize + Constants.textLeadingOffset
-    static let rowHeight = Self.imageSize + Constants.imageVerticalOffset * 2
-}
-
 class SettingsTableViewCell: UITableViewCell {
     static let identifier = "SettingsTableViewCell"
     var data: Setting? {
@@ -128,10 +102,9 @@ class SettingsTableViewCell: UITableViewCell {
     }
 
     private func configureSwitch(isOn: Bool) {
-        accessoryType = .none
         let switcher = UISwitch()
         switcher.isOn = isOn
-        trailingView = switcher
+        accessoryView = switcher
     }
 
     private func configureConnectionInfo(connectionInfo: ConnectionInfo) {
@@ -158,4 +131,64 @@ class SettingsTableViewCell: UITableViewCell {
             }
         }
     }
+
+    // MARK: - Reuse
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+
+        trailingView = nil
+        accessoryType = .none
+        accessoryView = nil
+    }
+}
+
+// MARK: - Extension
+
+extension UIView{
+    func configure<T: UIView>(view: T, block: @escaping (T) -> ()) -> T {
+        view.translatesAutoresizingMaskIntoConstraints = false
+        block(view)
+        return view
+    }
+
+    func setViewGradient(frame: CGRect, startPoint: CGPoint, endPoint: CGPoint, colors: [UIColor], location: [NSNumber]){
+
+        let gradient = CAGradientLayer()
+        gradient.frame = frame
+        gradient.colors = colors.map{
+            $0.cgColor
+        }
+        gradient.startPoint = startPoint
+        gradient.endPoint = endPoint
+        gradient.locations = location
+
+        self.layer.addSublayer(gradient)
+    }
+}
+
+// MARK: - Constants
+
+fileprivate enum Constants {
+    static let backgroundColor = UIColor.white
+    static let textFont = UIFont.systemFont(ofSize: 16)
+    static let textColor = UIColor.black
+    static let textLeadingOffset = 15.0
+    static let imageLeadingOffset = 10.0
+    static let imageVerticalOffset = 6.0
+    static let switcherTrailingOffset = 20.0
+    static let trailingViewTrailingOffset = 8.0
+    static let trailingLabelTextFont = UIFont.systemFont(ofSize: 16)
+    static let trailingLabelTextColor = UIColor.systemGray
+    static let trailingNotificationsColor = UIColor.systemRed
+    static let trailingNotificationsSize = 20.0
+    static let trailingNotificationsCornerRadius = trailingNotificationsSize / 2
+    static let trailingNotificationsTextColor = UIColor.white
+    static let trailingNotificationsTextFont = UIFont.systemFont(ofSize: 12)
+}
+
+enum SettingsTableViewCellConstants {
+    static let imageSize = 30.0
+    static let separatorInsetLeft = Constants.imageLeadingOffset + Self.imageSize + Constants.textLeadingOffset
+    static let rowHeight = Self.imageSize + Constants.imageVerticalOffset * 2
 }

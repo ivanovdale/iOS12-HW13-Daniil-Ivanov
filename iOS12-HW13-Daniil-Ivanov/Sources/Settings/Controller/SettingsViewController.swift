@@ -19,7 +19,6 @@ final class SettingsViewController: UIViewController {
 
     init(settingsFactory: SettingsFactory) {
         self.settingsFactory = settingsFactory
-        self.settings = nil
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -31,7 +30,7 @@ final class SettingsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadData()
+        fetchData()
     }
 
     override func loadView() {
@@ -49,7 +48,7 @@ final class SettingsViewController: UIViewController {
 
     // MARK: Data
 
-    private func loadData() {
+    private func fetchData() {
         settings = settingsFactory.createGroupedSettings()
     }
 }
@@ -59,11 +58,21 @@ final class SettingsViewController: UIViewController {
 extension SettingsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let data = settings?[indexPath.section][indexPath.row] else { return }
+
         print("Нажата ячейка \(data.type.rawValue)")
         tableView.deselectRow(at: indexPath, animated: true)
-        guard let navigationController, data.type != SettingType.airplaneMode else { return }
-        let detailsController = SettingDetailsViewController(data: data)
-        navigationController.pushViewController(detailsController, animated: true)
+
+        if let accessory = data.kind {
+            switch accessory {
+            case .switcher(_):
+                break
+            default:
+                guard let navigationController else { return }
+
+                let detailsController = SettingDetailsViewController(data: data)
+                navigationController.pushViewController(detailsController, animated: true)
+            }
+        }
     }
 }
 

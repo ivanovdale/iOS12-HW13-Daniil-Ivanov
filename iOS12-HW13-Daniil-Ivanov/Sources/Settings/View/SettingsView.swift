@@ -8,18 +8,18 @@
 import UIKit
 import SnapKit
 
-// MARK: - Constants
-
-fileprivate enum Constants {
-    static let backgroundColor = UIColor.white
-}
-
 final class SettingsView: UIView {
 
     // MARK: Outlets
 
-    private lazy var tableView: SettingsTableView = {
-        let tableView = SettingsTableView()
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: .zero, style: .insetGrouped)
+        tableView.register(
+            SettingsTableViewCell.self,
+            forCellReuseIdentifier: SettingsTableViewCell.identifier
+        )
+        tableView.separatorInset.left = SettingsTableViewCellConstants.separatorInsetLeft
+        
         return tableView
     }()
 
@@ -56,4 +56,10 @@ final class SettingsView: UIView {
         tableView.delegate = delegate
         tableView.dataSource = dataSource
     }
+}
+
+// MARK: - Constants
+
+fileprivate enum Constants {
+    static let backgroundColor = UIColor.white
 }
