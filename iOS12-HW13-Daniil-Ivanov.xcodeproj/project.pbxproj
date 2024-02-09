@@ -14,7 +14,6 @@
 		0093EA5B2B68E26200F2C4DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0093EA592B68E26200F2C4DC /* LaunchScreen.storyboard */; };
 		0093EA692B68E5CB00F2C4DC /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0093EA682B68E5CB00F2C4DC /* Setting.swift */; };
 		0093EA6B2B68E91600F2C4DC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0093EA6A2B68E91600F2C4DC /* SettingsView.swift */; };
-		0093EA6E2B68E9DF00F2C4DC /* SettingsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0093EA6D2B68E9DF00F2C4DC /* SettingsTableView.swift */; };
 		0093EA712B68FDF100F2C4DC /* Setting+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0093EA702B68FDF100F2C4DC /* Setting+Extensions.swift */; };
 		0093EA742B69054000F2C4DC /* SettingsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0093EA732B69054000F2C4DC /* SettingsFactory.swift */; };
 		0093EA762B690C8800F2C4DC /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0093EA752B690C8800F2C4DC /* SettingsTableViewCell.swift */; };
@@ -35,7 +34,6 @@
 		0093EA5C2B68E26200F2C4DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0093EA682B68E5CB00F2C4DC /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		0093EA6A2B68E91600F2C4DC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		0093EA6D2B68E9DF00F2C4DC /* SettingsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableView.swift; sourceTree = "<group>"; };
 		0093EA702B68FDF100F2C4DC /* Setting+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Setting+Extensions.swift"; sourceTree = "<group>"; };
 		0093EA732B69054000F2C4DC /* SettingsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFactory.swift; sourceTree = "<group>"; };
 		0093EA752B690C8800F2C4DC /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
@@ -95,7 +93,8 @@
 		0093EA632B68E3E900F2C4DC /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				0093EA7C2B6A689C00F2C4DC /* Features */,
+				0093EA7E2B6A68DE00F2C4DC /* SettingDetails */,
+				0093EA7D2B6A68A200F2C4DC /* Settings */,
 				0093EA6F2B68FDDE00F2C4DC /* Extensions */,
 			);
 			path = Sources;
@@ -122,6 +121,8 @@
 		0093EA662B68E56800F2C4DC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0093EA702B68FDF100F2C4DC /* Setting+Extensions.swift */,
+				0093EA732B69054000F2C4DC /* SettingsFactory.swift */,
 				0093EA682B68E5CB00F2C4DC /* Setting.swift */,
 			);
 			path = Model;
@@ -139,7 +140,6 @@
 			isa = PBXGroup;
 			children = (
 				0093EA6A2B68E91600F2C4DC /* SettingsView.swift */,
-				0093EA6D2B68E9DF00F2C4DC /* SettingsTableView.swift */,
 				0093EA752B690C8800F2C4DC /* SettingsTableViewCell.swift */,
 				0093EA882B6A896700F2C4DC /* SettingImageView.swift */,
 			);
@@ -154,28 +154,9 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		0093EA722B69051900F2C4DC /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				0093EA732B69054000F2C4DC /* SettingsFactory.swift */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
-		0093EA7C2B6A689C00F2C4DC /* Features */ = {
-			isa = PBXGroup;
-			children = (
-				0093EA7E2B6A68DE00F2C4DC /* SettingDetails */,
-				0093EA7D2B6A68A200F2C4DC /* Settings */,
-			);
-			path = Features;
-			sourceTree = "<group>";
-		};
 		0093EA7D2B6A68A200F2C4DC /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				0093EA832B6A7E7100F2C4DC /* Extensions */,
-				0093EA722B69051900F2C4DC /* Helpers */,
 				0093EA672B68E56D00F2C4DC /* Controller */,
 				0093EA662B68E56800F2C4DC /* Model */,
 				0093EA6C2B68E91C00F2C4DC /* View */,
@@ -190,14 +171,6 @@
 				0093EA842B6A853500F2C4DC /* Controller */,
 			);
 			path = SettingDetails;
-			sourceTree = "<group>";
-		};
-		0093EA832B6A7E7100F2C4DC /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				0093EA702B68FDF100F2C4DC /* Setting+Extensions.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		0093EA842B6A853500F2C4DC /* Controller */ = {
@@ -299,7 +272,6 @@
 				0093EA4F2B68E26100F2C4DC /* AppDelegate.swift in Sources */,
 				0093EA692B68E5CB00F2C4DC /* Setting.swift in Sources */,
 				0093EA872B6A855000F2C4DC /* SettingDetailsView.swift in Sources */,
-				0093EA6E2B68E9DF00F2C4DC /* SettingsTableView.swift in Sources */,
 				0093EA802B6A690000F2C4DC /* SettingDetailsViewController.swift in Sources */,
 				0093EA7B2B6920F600F2C4DC /* UIImage+Extensions.swift in Sources */,
 				0093EA892B6A896700F2C4DC /* SettingImageView.swift in Sources */,
