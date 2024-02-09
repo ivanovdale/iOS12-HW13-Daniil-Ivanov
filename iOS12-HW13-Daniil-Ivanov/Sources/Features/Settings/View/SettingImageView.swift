@@ -7,11 +7,6 @@
 
 import UIKit
 
-fileprivate enum Constants {
-    static let imageColor = UIColor.white
-    static let imageCornerRadius = SettingsTableViewCellConstants.imageSize / 4
-}
-
 class SettingImageView: UIImageView {
 
     // MARK: Data
@@ -48,4 +43,11 @@ class SettingImageView: UIImageView {
         }
     }
 
+}
+
+// MARK: - Constants
+
+fileprivate enum Constants {
+    static let imageColor = UIColor.white
+    static let imageCornerRadius = SettingsTableViewCellConstants.imageSize / 4
 }

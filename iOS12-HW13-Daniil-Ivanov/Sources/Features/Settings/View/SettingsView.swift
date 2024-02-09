@@ -8,12 +8,6 @@
 import UIKit
 import SnapKit
 
-// MARK: - Constants
-
-fileprivate enum Constants {
-    static let backgroundColor = UIColor.white
-}
-
 final class SettingsView: UIView {
 
     // MARK: Outlets
@@ -62,4 +56,10 @@ final class SettingsView: UIView {
         tableView.delegate = delegate
         tableView.dataSource = dataSource
     }
+}
+
+// MARK: - Constants
+
+fileprivate enum Constants {
+    static let backgroundColor = UIColor.white
 }
