@@ -9,17 +9,7 @@ import Foundation
 
 struct Setting {
     let type: SettingType
-    let kind: SettingKind?
-
-    init(type: SettingType, kind: SettingKind?) {
-        self.type = type
-        self.kind = kind
-    }
-
-    init(type: SettingType) {
-        self.type = type
-        self.kind = nil
-    }
+    var kind: SettingKind?
 }
 
 enum SettingType: String {
