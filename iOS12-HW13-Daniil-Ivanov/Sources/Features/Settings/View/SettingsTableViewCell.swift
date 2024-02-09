@@ -102,10 +102,9 @@ class SettingsTableViewCell: UITableViewCell {
     }
 
     private func configureSwitch(isOn: Bool) {
-        accessoryType = .none
         let switcher = UISwitch()
         switcher.isOn = isOn
-        trailingView = switcher
+        accessoryView = switcher
     }
 
     private func configureConnectionInfo(connectionInfo: ConnectionInfo) {
@@ -132,6 +131,18 @@ class SettingsTableViewCell: UITableViewCell {
             }
         }
     }
+
+    // MARK: - Reuse
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+
+        trailingView = nil
+        accessoryType = .none
+        accessoryView = nil
+    }
+}
+
 // MARK: - Extension
 
 extension UIView{
