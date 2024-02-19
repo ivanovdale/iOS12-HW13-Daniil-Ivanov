@@ -12,10 +12,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        window = UIWindow(windowScene: windowScene)
-        let settingsFactory = SettingsFactory()
-        let settingsController = SettingsViewController(settingsFactory: settingsFactory)
+        
+        let settingsController = SettingsViewController()
         let navigationController = UINavigationController(rootViewController: settingsController)
+
+        window = UIWindow(windowScene: windowScene)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }
