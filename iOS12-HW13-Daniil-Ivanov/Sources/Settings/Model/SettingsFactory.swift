@@ -8,7 +8,7 @@
 import Foundation
 
 struct SettingsFactory {
-    func createGroupedSettings() -> [[Setting]] {
+    static func createGroupedSettings() -> [[Setting]] {
         let primaryGroup = [
             Setting(type: .airplaneMode, kind: .switcher(value: false)),
             Setting(type: .wifi, kind: .connectionInfo(value: .connected)),

@@ -7,18 +7,14 @@
 
 import UIKit
 
-fileprivate enum Constants {
-    static let title = "Настройки"
-}
-
 final class SettingsViewController: UIViewController {
-    private let settingsFactory: SettingsFactory
     private var settings: [[Setting]]?
+
+    var appCoordinator: AppCoordinator?
 
     // MARK: Init
 
-    init(settingsFactory: SettingsFactory) {
-        self.settingsFactory = settingsFactory
+    init() {
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -49,7 +45,7 @@ final class SettingsViewController: UIViewController {
     // MARK: Data
 
     private func fetchData() {
-        settings = settingsFactory.createGroupedSettings()
+        settings = SettingsFactory.createGroupedSettings()
     }
 }
 
@@ -67,10 +63,7 @@ extension SettingsViewController: UITableViewDelegate {
             case .switcher(_):
                 break
             default:
-                guard let navigationController else { return }
-
-                let detailsController = SettingDetailsViewController(data: data)
-                navigationController.pushViewController(detailsController, animated: true)
+                appCoordinator?.goToSettingDetailsPage(data: data)
             }
         }
     }
@@ -96,3 +89,8 @@ extension SettingsViewController: UITableViewDataSource {
     }
 }
 
+// MARK: - Constants
+
+fileprivate enum Constants {
+    static let title = "Настройки"
+}
