@@ -10,6 +10,8 @@ import UIKit
 final class SettingsViewController: UIViewController {
     private var settings: [[Setting]]?
 
+    var appCoordinator: AppCoordinator?
+
     // MARK: Init
 
     init() {
@@ -61,10 +63,7 @@ extension SettingsViewController: UITableViewDelegate {
             case .switcher(_):
                 break
             default:
-                guard let navigationController else { return }
-
-                let detailsController = SettingDetailsViewController(data: data)
-                navigationController.pushViewController(detailsController, animated: true)
+                appCoordinator?.goToSettingDetailsPage(data: data)
             }
         }
     }
