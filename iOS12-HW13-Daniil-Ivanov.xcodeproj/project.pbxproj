@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		007C078E2B8CE5F0000BF046 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007C078D2B8CE5F0000BF046 /* AppCoordinator.swift */; };
 		0093EA4F2B68E26100F2C4DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0093EA4E2B68E26100F2C4DC /* AppDelegate.swift */; };
 		0093EA512B68E26100F2C4DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0093EA502B68E26100F2C4DC /* SceneDelegate.swift */; };
 		0093EA532B68E26100F2C4DC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0093EA522B68E26100F2C4DC /* SettingsViewController.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		007C078D2B8CE5F0000BF046 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		0093EA4B2B68E26100F2C4DC /* iOS12-HW13-Daniil-Ivanov.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS12-HW13-Daniil-Ivanov.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0093EA4E2B68E26100F2C4DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0093EA502B68E26100F2C4DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 			children = (
 				0093EA4E2B68E26100F2C4DC /* AppDelegate.swift */,
 				0093EA502B68E26100F2C4DC /* SceneDelegate.swift */,
+				007C078D2B8CE5F0000BF046 /* AppCoordinator.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				0093EA6B2B68E91600F2C4DC /* SettingsView.swift in Sources */,
 				0093EA532B68E26100F2C4DC /* SettingsViewController.swift in Sources */,
 				0093EA4F2B68E26100F2C4DC /* AppDelegate.swift in Sources */,
+				007C078E2B8CE5F0000BF046 /* AppCoordinator.swift in Sources */,
 				0093EA692B68E5CB00F2C4DC /* Setting.swift in Sources */,
 				0093EA872B6A855000F2C4DC /* SettingDetailsView.swift in Sources */,
 				0093EA802B6A690000F2C4DC /* SettingDetailsViewController.swift in Sources */,
